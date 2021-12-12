@@ -31,7 +31,7 @@ public class UserController {
 
 
     // Esta parte permitira verificar si un usuario existe por el atributo 'email'
-    @GetMapping("/{email}")
+    @GetMapping("/emailexist/{email}")
     public boolean verification(@PathVariable("email")String email){
         return service.getUserByEmail(email);
     }
@@ -40,4 +40,19 @@ public class UserController {
     public User authUser(@PathVariable("email")String email, @PathVariable("password")String password){
         return service.authUser(email, password);
     }
+
+    // Actualizacion de Usuario
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User update(@RequestBody User user){
+        return service.update(user);
+    }
+
+    //Borrar Usuario
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return service.delete(id);
+    }
+
 }

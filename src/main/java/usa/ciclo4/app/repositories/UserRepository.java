@@ -39,4 +39,12 @@ public class UserRepository {
         return repository.findByEmailAndPassword(email, password);
     }
 
+    public User update(User user){
+        return repository.save(user);
+    }
+
+    public Optional<User> lastUserId() {
+        return repository.findTopByOrderByIdDesc();
+    }
+
 }

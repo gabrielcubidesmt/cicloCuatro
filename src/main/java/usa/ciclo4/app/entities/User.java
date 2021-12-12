@@ -1,18 +1,28 @@
 package usa.ciclo4.app.entities;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
-@RequiredArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name="user")
+@AllArgsConstructor
+@Document(collection = "usuarios")
 public class User implements Serializable {
 
     @Id
+    private Integer id;
+    private String identification;
+    private String name;
+    private String address;
+    private String cellPhone;
+    private String email;
+    private String password;
+    private String zone;
+    private String type;
+    /*
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NonNull
@@ -23,6 +33,7 @@ public class User implements Serializable {
     private String password;
     @NonNull
     @Column(name = "user_name", nullable = false,  length = 80)
-    private String  name;
+    private String  name;*/
+
 
 }
