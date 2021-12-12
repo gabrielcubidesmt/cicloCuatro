@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -16,6 +17,8 @@ public class User implements Serializable {
     private Integer id;
     private String identification;
     private String name;
+    private Date bithtDay;
+    private String monthBirthtDay;
     private String address;
     private String cellPhone;
     private String email;
