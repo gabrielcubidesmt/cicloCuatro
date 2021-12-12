@@ -3,10 +3,12 @@ package usa.ciclo4.app.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import usa.ciclo4.app.entities.Order;
 import usa.ciclo4.app.entities.User;
 import usa.ciclo4.app.services.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("user")
@@ -20,6 +22,12 @@ public class UserController {
     @GetMapping("/all")
     public List<User> getUsers(){
         return service.getALL();
+    }
+
+
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") int id) {
+        return service.getUser(id);
     }
 
     // Esta parte se usa cuando el ADMIN va a crear un nuevo usuario
