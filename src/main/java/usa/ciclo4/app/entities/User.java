@@ -17,7 +17,7 @@ public class User implements Serializable {
     private Integer id;
     private String identification;
     private String name;
-    private Date bithtDay;
+    private Date birthtDay;
     private String monthBirthtDay;
     private String address;
     private String cellPhone;
