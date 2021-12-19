@@ -78,7 +78,7 @@ public class OrderService {
 
     //Reto 4 Listar ordenes de pedido de un asesor
     public List<Order> ordersSalesManByID(Integer id) {
-        return repository.orderSalesManById(id);
+        return repository.orderSalesManByID(id);
     }
 
     //Reto 4 Listar ordenes de pedido por x estado y asesor
