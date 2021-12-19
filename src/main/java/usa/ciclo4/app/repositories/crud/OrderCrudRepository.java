@@ -13,10 +13,10 @@ public interface OrderCrudRepository extends MongoRepository<Order, Integer> {
     @Query("{'salesMan.zone': ?0}")
     List<Order> findByZone(final String zone);
 
-    //Retorna las ordenes x estado
+    //Retorna las ordenes filtradas por  estado
     @Query("{status: ?0}")
     List<Order> findByStatus(final String status);
 
-    //Para seleccionar la orden con el id maximo
+    //Seleccion max id
     Optional<Order> findTopByOrderByIdDesc();
 }

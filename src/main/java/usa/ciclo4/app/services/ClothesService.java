@@ -72,4 +72,12 @@ public class ClothesService {
         }).orElse(false);
         return aBoolean;
     }
+
+    public List<Clothes> productsByPrice(double price){
+        return repository.productsByPrice(price);
+    }
+
+    public List<Clothes> findByDescriptionLike(String description){
+        return repository.findByDescriptionLike(description);
+    }
 }

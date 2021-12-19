@@ -33,4 +33,12 @@ public class ClothesRepository {
     public void delete(Clothes clothes) {
         repository.delete(clothes);
     }
+
+    public List<Clothes> productsByPrice(double price){
+        return repository.findByPriceLessThanEqual(price);
+    }
+
+    public List<Clothes> findByDescriptionLike(String description){
+        return repository.findByDescriptionLike(description);
+    }
 }

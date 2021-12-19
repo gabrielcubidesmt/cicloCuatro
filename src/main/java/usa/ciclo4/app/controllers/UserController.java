@@ -50,17 +50,23 @@ public class UserController {
     }
 
     // Actualizacion de Usuario
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public User update(@RequestBody User user){
         return service.update(user);
     }
 
     //Borrar Usuario
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
         return service.delete(id);
+    }
+
+    // Cumpleaños del mes
+    @GetMapping("/birthday/{month}")
+    public List<User> listBirthtDayMonth(@PathVariable("month") String month){
+        return service.listBirthDayMonth(month);
     }
 
 }
