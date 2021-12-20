@@ -51,7 +51,9 @@ public class clothesController {
     }
 
     @GetMapping("/description/{description}")
-    public List<Clothes> findByDescriptionLike(@PathVariable("description") String description){
+    public List<Clothes> getDescription(@PathVariable("description") String description){
         return service.findByDescriptionLike(description);
     }
+
+
 }

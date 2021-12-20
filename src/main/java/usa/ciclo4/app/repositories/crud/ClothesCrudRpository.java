@@ -12,5 +12,8 @@ public interface ClothesCrudRpository extends MongoRepository<Clothes, String> {
     public List<Clothes> findByPriceLessThanEqual(double price);
 
     //@Query("{'description':{'$regex':'?0', '$options':'1'}}")
-    public List<Clothes> findByDescriptionLike(String description);
+    //public List<Clothes> findByDescriptionike(String description);
+
+    public List<Clothes> findByDescriptionContainingIgnoreCase(String description);
+
 }

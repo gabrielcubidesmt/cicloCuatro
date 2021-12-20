@@ -39,6 +39,7 @@ public class ClothesRepository {
     }
 
     public List<Clothes> findByDescriptionLike(String description){
-        return repository.findByDescriptionLike(description);
+        return repository.findByDescriptionContainingIgnoreCase(description);
     }
+
 }
