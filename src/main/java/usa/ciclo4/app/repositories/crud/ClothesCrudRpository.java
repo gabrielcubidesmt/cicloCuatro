@@ -9,6 +9,6 @@ import java.util.List;
 public interface ClothesCrudRpository extends MongoRepository<Clothes, String> {
     public List<Clothes> findByPriceLessThanEqual(double price);
 
-    @Query("{'description':{'$regex':'?0', '$options':'1'}}")
+    //@Query("{'description':{'$regex':'?0', '$options':'1'}}")
     public List<Clothes> findByDescriptionLike(String description);
 }
